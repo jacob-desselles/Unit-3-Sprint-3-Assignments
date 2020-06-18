@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-#from tweepy import 0Authhandler API
+from tweepy import OAuthHandler, API
 
 load_dotenv()
 #Since I still haven't been approved for Twitter development,
@@ -10,7 +10,7 @@ TWITTER_API_SECRET = os.getenv("TWITTER_API_SECRET")
 TWITTER_ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
 TWITTER_ACCESS_TOKEN_SECRET = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 
-auth = 0AuthHandler(TWITTER_API_KEY, TWITTER_API_SECRET)
+auth = OAuthHandler(TWITTER_API_KEY, TWITTER_API_SECRET)
 auth.set_access_token(TWITTER_ACCESS_TOKEN,TWITTER_ACCESS_TOKEN_SECRET)
 
 api= tweepy.API(auth)
